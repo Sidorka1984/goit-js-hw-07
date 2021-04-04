@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+.gallery__list {
+  display: flex;
+  padding: 30px;
+}
+.images-list__item:not(:last-child) {
+  margin-right: 30px;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
