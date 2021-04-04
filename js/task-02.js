@@ -7,18 +7,17 @@ const ingredients = [
   'Приправы',
 ];
 
-const ingredientsEl = ingredients.map(ingredient => {
-const items = document.createElement('li');
-    items.textContent = ingredient;
+// const ingredientsEl = ingredients.map(ingredient => {
+// const items = document.createElement('li');
+//     items.textContent = ingredient;
  
-    console.log(items);
+//     console.log(items);
 
-    return items;
+//     return items;
 
-}
-)
-const ingredientsEllist = document.querySelector('#ingredients');
-ingredientsEllist.append(...ingredientsEl);
+// })
+// const ingredientsEllist = document.querySelector('#ingredients');
+// ingredientsEllist.append(...ingredientsEl);
 
 
 // let ulList = document.getElementById("ingredients");
@@ -26,7 +25,16 @@ ingredientsEllist.append(...ingredientsEl);
 //   let items = document.createElement("li");
 //   items.innerHTML = ingredient;
 //   ulList.append(items);
-//   parent.append(...items)
+  
 // });
 
 // console.log(foodIngredients);
+
+const ulList = document.getElementById("ingredients");
+console.log(ulList);
+ingredients.forEach((ingredient) => {
+  const liItem = document.createElement('li');
+  liItem.textContent = ingredient;
+  console.log(liItem);
+  ulList.append(liItem);
+})
