@@ -1,19 +1,34 @@
 const inputValid = document.querySelector('#validation-input');
 
-inputValid.addEventListener("blur", e => {
+inputValid.addEventListener('blur', () => {
     const inputTextLength = inputValid.value.length;
-    const maxLength = inputValid.getAttribute('data-length');
-    inputValid.classList.add('valid');
+    
     if (!inputTextLength) {
         inputValid.classList.remove('valid');
-        inputValid.classList.remove('invalid');
+        inputValid.classList.remove('invalid');       
     }
-    if (maxLength < inputTextLength) {
-       return inputValid.classList.replace('valid','invalid');
-       
-    } 
-        if (inputValid.classList.contains('invalid')) {
-            return inputValid.classList.replace('valid','invalid');
-    }             
+     
+    if (inputTextLength === 6) {
+     inputValid.classList.add('valid');
+        inputValid.classList.remove('invalid');
+        
+    }  else {
+        inputValid.classList.add('invalid')
+        inputValid.classList.remove('valid');
+    }          
     
 })
+// без переменной
+// inputValid.addEventListener('blur', () => {
+//      if (!inputValid.value.length) {
+//         inputValid.classList.remove('valid');
+//         inputValid.classList.remove('invalid');
+//     }
+//     if (inputValid.value.length === 6 ) {
+//         inputValid.classList.add('valid');
+//         inputValid.classList.remove('invalid');
+//     } else {
+//         inputValid.classList.add('invalid')
+//         inputValid.classList.remove('valid');
+//     }
+// });
