@@ -2,19 +2,16 @@ const inputValid = document.querySelector('#validation-input');
 
 inputValid.addEventListener('blur', () => {
     const inputTextLength = inputValid.value.length;
-    
-    if (!inputTextLength) {
-        inputValid.classList.remove('valid');
-        inputValid.classList.remove('invalid');       
-    }
+    const maxLength = inputValid.getAttribute('data-length');
+  
      
-    if (inputTextLength === 6) {
-     inputValid.classList.add('valid');
-        inputValid.classList.remove('invalid');
+    if (inputTextLength > maxLength) {
+     inputValid.classList.add('invalid');
+        inputValid.classList.remove('valid');
         
     }  else {
-        inputValid.classList.add('invalid')
-        inputValid.classList.remove('valid');
+        inputValid.classList.add('valid')
+        inputValid.classList.remove('invalid');
     }          
     
 })
@@ -24,7 +21,7 @@ inputValid.addEventListener('blur', () => {
 //         inputValid.classList.remove('valid');
 //         inputValid.classList.remove('invalid');
 //     }
-//     if (inputValid.value.length === 6 ) {
+//     if (inputValid.value.length === inputValid.getAttribute('data-length')) {
 //         inputValid.classList.add('valid');
 //         inputValid.classList.remove('invalid');
 //     } else {
@@ -32,3 +29,6 @@ inputValid.addEventListener('blur', () => {
 //         inputValid.classList.remove('valid');
 //     }
 // });
+
+
+
