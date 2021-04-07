@@ -6,7 +6,7 @@ inputValid.addEventListener('blur', () => {
      
     if (inputTextLength > maxLength || inputTextLength < maxLength) {
      inputValid.classList.add('invalid');
-        inputValid.classList.remove('valid');
+        
         
     }  else {
         inputValid.classList.add('valid')
@@ -28,6 +28,7 @@ inputValid.addEventListener('blur', () => {
 //         inputValid.classList.remove('valid');
 //     }
 // });
+
 
 
 
