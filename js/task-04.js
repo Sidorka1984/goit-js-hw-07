@@ -17,35 +17,19 @@
 // decrementBtnEl.addEventListener("click", DecrementBtnClick);
 
 
-const btnEl = document.querySelectorAll('#counter button');
+let valueEl = Number(document.querySelector('#value').textContent);
+let counterValue = document.querySelector('#value');
 
-const btnDecrementEl = btnEl[0].dataset;
-console.log(btnEl[0]);
+const decrementBtnEl = document.querySelector('#counter').firstElementChild;
+const incrementBtnEl = document.querySelector('#counter').lastElementChild;
 
-const btnIncrementEl = btnEl[1].dataset;
-console.log(btnEl[1])
+incrementBtnEl.addEventListener('click', event => {
+  valueEl += 1;
+  counterValue.innerHTML = valueEl;
+});
 
-
-const spanEl = document.querySelector('#value');
-let spanContentEl = spanEl.textContent;
-
-
-let counterValue = 0;
-
-btnEl[0].addEventListener('click', decrement);
-btnEl[1].addEventListener('click', increment);
-
-
-function decrement() {
-  counterValue -= 1;
-  return counterValue;
-}
-
-function increment() {     
-  counterValue += 1;
- return counterValue;
-}
-
-
-
+decrementBtnEl.addEventListener('click', event => {
+  valueEl -= 1;
+  counterValue.innerHTML = valueEl;
+})
 
